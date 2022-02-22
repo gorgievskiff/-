@@ -15,5 +15,7 @@ namespace МојТермин.Data
         }
         public DbSet<МојТермин.Models.Doctor> Doctor { get; set; }
         public DbSet<МојТермин.Models.Patient> Patient { get; set; }
+
+       
     }
 }

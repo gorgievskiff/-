@@ -10,8 +10,12 @@ namespace МојТермин.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; } 
-        public Doctor Doctor { get; set; }
+        public int DoctorId { get; set; }
+
+
         public ICollection<Term> Terms { get; set; }
+        public Doctor Doctor { get; set; }
+
 
 
     }
