@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using МојТермин.Data;
 
 namespace МојТермин.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220222142715_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -358,7 +360,7 @@ namespace МојТермин.Data.Migrations
                         .HasForeignKey("DoctorId");
 
                     b.HasOne("МојТермин.Models.Patient", "Patient")
-                        .WithMany("Terms")
+                        .WithMany()
                         .HasForeignKey("PatientId");
 
                     b.Navigation("Doctor");
@@ -370,11 +372,6 @@ namespace МојТермин.Data.Migrations
                 {
                     b.Navigation("Patients");
 
-                    b.Navigation("Terms");
-                });
-
-            modelBuilder.Entity("МојТермин.Models.Patient", b =>
-                {
                     b.Navigation("Terms");
                 });
 #pragma warning restore 612, 618

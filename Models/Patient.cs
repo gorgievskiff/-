@@ -11,6 +11,7 @@ namespace МојТермин.Models
         public string Name { get; set; }
         public string Surname { get; set; } 
         public Doctor Doctor { get; set; }
+        public ICollection<Term> Terms { get; set; }
 
 
     }

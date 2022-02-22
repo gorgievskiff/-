@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using МојТермин.Models;
 
 namespace МојТермин.Data
 {
@@ -12,5 +13,7 @@ namespace МојТермин.Data
             : base(options)
         {
         }
+        public DbSet<МојТермин.Models.Doctor> Doctor { get; set; }
+        public DbSet<МојТермин.Models.Patient> Patient { get; set; }
     }
 }

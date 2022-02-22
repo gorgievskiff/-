@@ -13,6 +13,7 @@ namespace МојТермин.Models
         public string Surname { get; set; }
 
         public ICollection<Patient> Patients { get; set; }
+        public ICollection<Term> Terms { get; set; }    
 
 
     }
