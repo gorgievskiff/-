@@ -22,7 +22,7 @@ namespace МојТермин.Controllers
         // GET: Patients
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Patient.ToListAsync());
+            return View(await _context.Patient.Include(p => p.Doctor).ToListAsync());
         }
 
         // GET: Patients/Details/5
